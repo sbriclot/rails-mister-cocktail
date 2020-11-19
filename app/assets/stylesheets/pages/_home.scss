@@ -1,1 +1,13 @@
 // Specific CSS for your home-page
+body {
+  background-color: $body;
+}
+
+.container {
+  margin-top: 110px;
+}
+
+.wrapper {
+  min-height: calc(100vh - 120px);
+  position: relative;
+}

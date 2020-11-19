@@ -1,12 +1,22 @@
-<div class="container">
+<div class="container mb-4">
   <div>
-    <h2><%= @cocktail.name %> details</h2>
+    <div>
+      <h2>
+        <%= @cocktail.name %>
+        <%= link_to edit_cocktail_path(@cocktail.id) do %>
+          <span class='fas fa-edit icon ml-2'></span>
+        <% end %>
+        <%= link_to cocktail_path(@cocktail.id), method: :delete, data: {confirm: "Are you sure ?"} do %>
+          <span class='fas fa-trash-alt icon ml-2'></span>
+        <% end %>
+      </h2>
+    </div>
     <ol>
       <% @cocktail.doses.each do |d| %>
         <li>
           <%= d.ingredient.name %> - <%= d.description %>
           <%= link_to cocktail_dose_path(@cocktail.id, d.id), method: :delete, data: {confirm: "Are you sure ?"} do %>
-            <span class='fas fa-trash-alt'></span>
+            <span class='fas fa-trash-alt icon ml-2'></span>
           <% end %>
         </li>
       <% end %>

@@ -1,4 +1,7 @@
 <div class="navbar">
-  <%= link_to "Mister Cocktail", root_path %>
-  <%= link_to "Add new", new_cocktail_path %>
+  <%= link_to root_path, class: "navbar-header" do %>
+    <%= image_tag "shaker.png", height: 50 %>
+    <span class="navbar-title">Mister Cocktail</span>
+  <% end %>
+  <%= link_to "Add new", new_cocktail_path, class: "btn btn-primary" %>
 </div>

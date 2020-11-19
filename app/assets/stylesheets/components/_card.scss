@@ -14,5 +14,11 @@ a {
 }
 
 .card {
-  width: 300px;
+  width: 320px;
+  height: 240px;
+  background: linear-gradient(132deg, rgba(20, 20, 20, 0.2), rgba(240, 240, 240, 0.2)), url("https://loremflickr.com/320/240/cocktail");
+  & h3 {
+    padding: 8px;
+    color: white;
+  }
 }
