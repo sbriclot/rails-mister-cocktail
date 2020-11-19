@@ -1,0 +1,10 @@
+<div class="container">
+  <h2><%= @cocktail.name %> details</h2>
+  <ol>
+    <% @cocktail.doses.each do |d| %>
+      <li>
+        <%= d.ingredient.name %> - <%= d.description %>
+      </li>
+    <% end %>
+  </ol>
+</div>
