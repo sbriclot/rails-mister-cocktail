@@ -1,0 +1,18 @@
+.cards {
+  display: inline-grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  column-gap: 25px;
+  row-gap: 30px;
+}
+
+a {
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+    opacity: 0.7;
+  }
+}
+
+.card {
+  width: 300px;
+}

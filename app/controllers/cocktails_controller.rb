@@ -7,7 +7,7 @@ class CocktailsController < ApplicationController
 
   def show
     @dose = Dose.new
-    @ingredients = Ingredient.all.map { |i| i.name }.sort
+    # @ingredients = Ingredient.all.map { |i| i.name }.sort
   end
 
   def new

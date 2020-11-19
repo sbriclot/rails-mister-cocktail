@@ -1,10 +1,12 @@
 <div class="container">
   <h1>Cocktails list</h1>
-  <ul>
+  <div class="cards">
     <% @cocktails.each do |cocktail| %>
-      <li>
-        <%= cocktail.name %> | <%= link_to "View", cocktail_path(cocktail.id)  %>
-      </li>
+      <%= link_to cocktail_path(cocktail.id) do %>
+        <div class="card">
+          <h3><%= cocktail.name %></h3>
+        </div>
+      <% end %>
     <% end %>
-  </ul>
+  </div>
 </div>
