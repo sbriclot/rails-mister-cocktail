@@ -3,7 +3,7 @@
     <div class="cards mb-4">
       <% @cocktails.each do |cocktail| %>
         <%= link_to cocktail_path(cocktail.id) do %>
-          <div class="card">
+          <div class="card" style="background-image: linear-gradient(rgba(10, 10, 10, 0.3), rgba(240, 240, 240, 0.3)), url('https://res.cloudinary.com/teka/image/upload/v1605873393/<%= cocktail.photo.key %>.jpg')">
             <h3><%= cocktail.name %></h3>
           </div>
         <% end %>

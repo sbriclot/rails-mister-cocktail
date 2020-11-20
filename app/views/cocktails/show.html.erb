@@ -11,6 +11,7 @@
         <% end %>
       </h2>
     </div>
+    <%= cl_image_tag @cocktail.photo.key rescue image_tag 'missing.jpg', height: 300, width: 400, crop: :fill %>
     <ol>
       <% @cocktail.doses.each do |d| %>
         <li>
