@@ -16,21 +16,32 @@
         <%= cl_image_tag @cocktail.photo.key, height: 250, width: 375, crop: :fill %>
       </div>
     </div>
-    <div class="show-container mb-2">
-      <ol>
-        <% @cocktail.doses.each do |d| %>
-          <li>
-            <%= d.ingredient.name %> - <%= d.description %>
-            <%= link_to cocktail_dose_path(@cocktail.id, d.id), method: :delete, data: {confirm: "Are you sure ?"} do %>
-              <span class='fas fa-trash-alt icon ml-2'></span>
+    <div class="dose-info">
+      <div class="half">
+        <div class="show-container mb-2">
+          <table>
+            <% @cocktail.doses.each do |d| %>
+              <tr>
+                <td><%= d.ingredient.name %> - <%= d.description %></td>
+                <td>
+                  <%= link_to cocktail_dose_path(@cocktail.id, d.id), method: :delete, data: {confirm: "Are you sure ?"} do %>
+                    <span class='fas fa-trash-alt icon ml-2'></span>
+                  <% end %>
+                </td>
+              </tr>
             <% end %>
-          </li>
-        <% end %>
-      </ol>
+          </table>
+        </div>
+        <div class="show-container mb-2">
+          <%= render "doses/new" %>
+        </div>
+      </div>
+      <div class="half">
+        <div class="show-container text-center mb-2">
+          <button class="btn btn-primary" id="btn-history">Show History</button>
+        </div>
+        <%= render "./shared/history"%>
+      </div>
     </div>
-  </div>
-
-  <div class="show-container mb-2">
-    <%= render "doses/new" %>
   </div>
 </div>

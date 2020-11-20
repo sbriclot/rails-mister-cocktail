@@ -1,9 +1,19 @@
 .show-container {
   box-shadow: 0 0 2px $blue;
   padding: 8px;
+
 }
 
 .show-cont-image img {
   border: 1px solid $blue;
   border-radius: 4px;
+}
+
+.dose-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.half {
+  width: 48%;
 }

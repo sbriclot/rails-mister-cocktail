@@ -16,3 +16,11 @@ require("channels")
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 import 'bootstrap';
+
+import { toggleHistory } from './components/history';
+
+document.addEventListener('turbolinks:load', () => {
+  // Call your JS functions here
+  console.log("Hello console...")
+  toggleHistory();
+});
