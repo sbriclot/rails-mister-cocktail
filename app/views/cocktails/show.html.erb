@@ -1,30 +1,36 @@
 <div class="container mb-4">
   <div>
-    <div>
-      <h2>
-        <%= @cocktail.name %>
-        <%= link_to edit_cocktail_path(@cocktail.id) do %>
-          <span class='fas fa-edit icon ml-2'></span>
-        <% end %>
-        <%= link_to cocktail_path(@cocktail.id), method: :delete, data: {confirm: "Are you sure ?"} do %>
-          <span class='fas fa-trash-alt icon ml-2'></span>
-        <% end %>
-      </h2>
-    </div>
-    <%= cl_image_tag @cocktail.photo.key rescue image_tag 'missing.jpg', height: 300, width: 400, crop: :fill %>
-    <ol>
-      <% @cocktail.doses.each do |d| %>
-        <li>
-          <%= d.ingredient.name %> - <%= d.description %>
-          <%= link_to cocktail_dose_path(@cocktail.id, d.id), method: :delete, data: {confirm: "Are you sure ?"} do %>
+    <div class="show-container mb-2">
+      <div>
+        <h2>
+          <%= @cocktail.name %>
+          <%= link_to edit_cocktail_path(@cocktail.id) do %>
+            <span class='fas fa-edit icon ml-2'></span>
+          <% end %>
+          <%= link_to cocktail_path(@cocktail.id), method: :delete, data: {confirm: "Are you sure ?"} do %>
             <span class='fas fa-trash-alt icon ml-2'></span>
           <% end %>
-        </li>
-      <% end %>
-    </ol>
+        </h2>
+      </div>
+      <div class="show-cont-image">
+        <%= cl_image_tag @cocktail.photo.key, height: 250, width: 375, crop: :fill %>
+      </div>
+    </div>
+    <div class="show-container mb-2">
+      <ol>
+        <% @cocktail.doses.each do |d| %>
+          <li>
+            <%= d.ingredient.name %> - <%= d.description %>
+            <%= link_to cocktail_dose_path(@cocktail.id, d.id), method: :delete, data: {confirm: "Are you sure ?"} do %>
+              <span class='fas fa-trash-alt icon ml-2'></span>
+            <% end %>
+          </li>
+        <% end %>
+      </ol>
+    </div>
   </div>
 
-  <div>
+  <div class="show-container mb-2">
     <%= render "doses/new" %>
   </div>
 </div>
