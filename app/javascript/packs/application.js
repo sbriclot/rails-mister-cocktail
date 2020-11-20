@@ -18,9 +18,10 @@ require("channels")
 import 'bootstrap';
 
 import { toggleHistory } from './components/history';
+import { newCocktailSetFocus } from './components/new_cocktail_focus';
 
 document.addEventListener('turbolinks:load', () => {
-  // Call your JS functions here
-  console.log("Hello console...")
+  // Call your JS functions here)
+  newCocktailSetFocus();
   toggleHistory();
 });
