@@ -19,9 +19,36 @@ import 'bootstrap';
 
 import { toggleHistory } from './components/history';
 import { newCocktailSetFocus } from './components/new_cocktail_focus';
+import { initSweetalert } from '../plugins/init_sweetalert';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your JS functions here)
   newCocktailSetFocus();
   toggleHistory();
+  // delete cocktail sweet alert
+  initSweetalert('#swal-del-cocktail', {
+    title: "Delete cocktail",
+    text: "Are you sure you want to delete this cocktail ?",
+    icon: "warning",
+    buttons: true,
+    dangerMode: true
+  }, (value) => {
+    if (value) {
+      const link = document.querySelector('#del-cocktail');
+      link.click();
+    }
+  });
+  // delete dose sweet alert
+  initSweetalert('.swal-del-dose', {
+    title: "Delete dose",
+    text: "Are you sure you want to remove this dose from the cocktail recipe ?",
+    icon: "warning",
+    buttons: true,
+    dangerMode: true
+  }, (value) => {
+    if (value) {
+      const link = document.querySelector('#del-dose');
+      link.click();
+    }
+  });
 });

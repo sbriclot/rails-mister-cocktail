@@ -1,6 +1,6 @@
-<h2>Ingredient</h2>
+<h2>Add an ingredient</h2>
 
-<%= simple_form_for [@cocktail, @dose] do |f| %>
+<%= simple_form_for [@cocktail, @dose], remote: true do |f| %>
   <%= f.association :ingredient, collection: Ingredient.order(:name) %>
   <%= f.input :description %>
   <%= f.submit "Add", class: "btn btn-primary" %>

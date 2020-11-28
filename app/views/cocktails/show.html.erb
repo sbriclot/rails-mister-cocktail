@@ -7,9 +7,8 @@
           <%= link_to edit_cocktail_path(@cocktail.id) do %>
             <span class='fas fa-edit icon ml-2'></span>
           <% end %>
-          <%= link_to cocktail_path(@cocktail.id), method: :delete, data: {confirm: "Are you sure ?"} do %>
-            <span class='fas fa-trash-alt icon ml-2'></span>
-          <% end %>
+          <button id="swal-del-cocktail"><span class='fas fa-trash-alt icon ml-2'></span></button>
+          <%= link_to "", cocktail_path(@cocktail.id), method: :delete, id: "del-cocktail", class: "d-none" %>
         </h2>
       </div>
       <div class="show-cont-image">
@@ -18,15 +17,14 @@
     </div>
     <div class="dose-info">
       <div class="half">
-        <div class="show-container mb-2">
+        <div class="show-container dose-list mb-2">
           <table>
             <% @cocktail.doses.each do |d| %>
               <tr>
                 <td><%= d.ingredient.name %> - <%= d.description %></td>
                 <td>
-                  <%= link_to cocktail_dose_path(@cocktail.id, d.id), method: :delete, data: {confirm: "Are you sure ?"} do %>
-                    <span class='fas fa-trash-alt icon ml-2'></span>
-                  <% end %>
+                  <button class="swal-del-dose"><span class='fas fa-trash-alt icon ml-2'></span></button>
+                  <%= link_to "", cocktail_dose_path(@cocktail.id, d.id), method: :delete, remote: true, id: "del-dose", class: "d-none" %>
                 </td>
               </tr>
             <% end %>
@@ -37,9 +35,6 @@
         </div>
       </div>
       <div class="half">
-        <div class="show-container text-center mb-2">
-          <button class="btn btn-primary" id="btn-history">Show History</button>
-        </div>
         <%= render "./shared/history"%>
       </div>
     </div>

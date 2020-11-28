@@ -1,7 +1,6 @@
 .show-container {
   box-shadow: 0 0 2px $blue;
   padding: 8px;
-
 }
 
 .show-cont-image img {
@@ -14,6 +13,20 @@
   justify-content: space-between;
 }
 
+.dose-list {
+  min-height: 120px;
+  max-height: 120px;
+  overflow-y: auto;
+}
+
 .half {
   width: 48%;
+  min-height: 400px;
+  max-height: 400px;
+}
+
+#dsp-history {
+  min-height: 400px;
+  max-height: 400px;
+  overflow-y: auto;
 }
