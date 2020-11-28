@@ -19,11 +19,9 @@ import 'bootstrap';
 
 import { toggleHistory } from './components/history';
 import { newCocktailSetFocus } from './components/new_cocktail_focus';
-import { loadDynamicBannerText } from './components/banner';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your JS functions here)
   newCocktailSetFocus();
   toggleHistory();
-  loadDynamicBannerText();
 });
