@@ -35,7 +35,18 @@
         </div>
       </div>
       <div class="half">
-        <%= render "./shared/history"%>
+        <div>
+          <nav class="nav nav-tabs" role="tablist">
+            <a class="nav-link active" id="review-tab" data-toggle="tab" href="#reviews" role="tab" aria-controls="review" aria-selected="true">Reviews</a>
+            <a class="nav-link" id="history-tab" data-toggle="tab" href="#history" role="tab" aria-controls="history" aria-selected="false">History</a>
+          </nav>
+        </div>
+        <div class="show-container dsp-tabs">
+          <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="reviews" role="tabpanel" aria-labelledby="home-tab"><%= render "./shared/reviews"%></div>
+            <div class="tab-pane fade" id="history" role="tabpanel" aria-labelledby="profile-tab"><%= render "./shared/history"%></div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

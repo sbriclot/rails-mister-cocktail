@@ -1,17 +1,15 @@
-<div class="show-container" id="dsp-history">
-  <table>
-    <% @cocktail.histories.each do |history| %>
-      <tr>
-        <td class="pr-2">
-          <% if history.action == "add" %>
-            <span class="fas fa-plus act-add"></span>
-          <% else %>
-            <span class="fas fa-minus act-del"></span>
-          <%  end %>
-        </td>
-        <td class="pr-2"><%= history.ingredient.name %> - <%= history.description %></td>
-        <td><%= history.created_at.strftime("on %d/%m/%Y at %H:%M") %></td>
-      </tr>
-    <% end %>
-  </table>
-</div>
+<table>
+  <% @cocktail.histories.each do |history| %>
+    <tr>
+      <td class="pr-2">
+        <% if history.action == "add" %>
+          <span class="fas fa-plus act-add"></span>
+        <% else %>
+          <span class="fas fa-minus act-del"></span>
+        <%  end %>
+      </td>
+      <td class="pr-2"><%= history.ingredient.name %> - <%= history.description %></td>
+      <td><%= history.created_at.strftime("on %d/%m/%Y at %H:%M") %></td>
+    </tr>
+  <% end %>
+</table>
