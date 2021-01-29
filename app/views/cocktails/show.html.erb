@@ -23,8 +23,8 @@
               <tr>
                 <td><%= d.ingredient.name %> - <%= d.description %></td>
                 <td>
-                  <button class="swal-del-dose"><span class='fas fa-trash-alt icon ml-2'></span></button>
-                  <%= link_to "", cocktail_dose_path(@cocktail.id, d.id), method: :delete, remote: true, id: "del-dose", class: "d-none" %>
+                  <button class="swal-del-dose" data-id="<%= d.id %>"><span class='fas fa-trash-alt icon ml-2'></span></button>
+                  <%= link_to "", cocktail_dose_path(@cocktail.id, d.id), method: :delete, remote: true, id: "del-dose-#{d.id}", class: "del-dose d-none" %>
                 </td>
               </tr>
             <% end %>

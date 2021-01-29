@@ -39,16 +39,19 @@ document.addEventListener('turbolinks:load', () => {
     }
   });
   // delete dose sweet alert
-  initSweetalert('.swal-del-dose', {
-    title: "Delete dose",
-    text: "Are you sure you want to remove this dose from the cocktail recipe ?",
-    icon: "warning",
-    buttons: true,
-    dangerMode: true
-  }, (value) => {
-    if (value) {
-      const link = document.querySelector('#del-dose');
-      link.click();
-    }
-  });
+  const delButtons = document.querySelectorAll('[data-id]');
+  delButtons.forEach((button) => {
+    initSweetalert(`[data-id='${button.dataset.id}']`, {
+      title: "Delete dose",
+      text: "Are you sure you want to remove this dose from the cocktail recipe ?",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true
+    }, (value) => {
+      if (value) {
+        const link = document.querySelector(`#del-dose-${button.dataset.id}`);
+        link.click();
+      }
+    });
+  })
 });
