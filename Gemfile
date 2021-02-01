@@ -52,6 +52,10 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
+group :test do
+  gem 'launchy'
+end
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'rails-controller-testing', group: [:test]
 gem 'rspec-rails', '4.0.0.beta3', group: [:test]
