@@ -14,7 +14,6 @@ class DosesController < ApplicationController
 
     if @dose.save
       save_history(@dose, 'add')
-
       redirect_to cocktail_path(@cocktail)
     else
       render 'cocktails/show'
@@ -25,7 +24,6 @@ class DosesController < ApplicationController
     @dose = Dose.find(params[:id])
     save_history(@dose, 'del')
     @dose.destroy
-
     redirect_to cocktail_path(params[:cocktail_id])
   end
 
