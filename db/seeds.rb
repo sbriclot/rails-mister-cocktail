@@ -10,10 +10,12 @@
 require 'open-uri'
 require 'json'
 
-list = URI.open('https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list')
-ingredients = JSON.parse(list)['drinks']
-puts "Start generating #{ingredients.count} ingredients..."
+puts "Start seed..."
 
+list = URI.open('https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list').read
+ingredients = JSON.parse(list)['drinks']
+
+puts "Start generating #{ingredients.count} ingredients..."
 ingredients.each do |i|
   Ingredient.create!(name: i['strIngredient1'])
 end
